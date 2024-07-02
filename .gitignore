@@ -1,2 +1,3 @@
 dataset
 venv
+model/bilstm_crf.h5
