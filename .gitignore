@@ -3,3 +3,4 @@ venv
 model/bilstm_crf.h5
 model/sentence_tokenizer_json.json
 model/tag_tokenizer_json.json
+frontend/node_modules
