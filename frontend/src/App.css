@@ -53,3 +53,80 @@ body {
     width: 100%;
     height: 40px;
 }
+
+.nav {
+    font-size: 40px;
+    padding: 0;
+}
+
+.home_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editable {
+    width: 30%;
+    height: 70vh;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 40px;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    box-shadow: 6px 6px 15px 3px;
+}
+
+.result {
+    width: 30%;
+    height: 70vh;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 40px;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    box-shadow: 6px 6px 15px 3px;
+}
+
+button {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 30px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(2px);
+    box-shadow: 3px 3px 7px 1px;
+}
+
+/* 개체명 유형별 색상 */
+/* .person { color: #9899e9;}
+.study_field { color: #1b5e20; }
+.theory { color: #0d47a1; }      
+.artifacts { color: #6a1b9a; }   
+.organization { color: #0077ff; }
+.location { color: #ea4664; }    
+.civilization { color: #1eee30; }
+.date { color: #ffa976; }        
+.time { color: #abccb6; }        
+.quantity { color: #827717; }    
+.event { color: #880e4f; }       
+.animal { color: #b4bed2; }      
+.plant { color: #4a148c; }        
+.material { color: #01579b; }    
+.term { color: #455a64; }         */
+
+.person { display: inline; box-shadow: inset 0 -10px 0 #eeff00; }
+.study_field { display: inline; box-shadow: inset 0 -10px 0 #47ffd7; }
+.theory { display: inline; box-shadow: inset 0 -10px 0 #0d47a1; }      
+.artifacts { display: inline; box-shadow: inset 0 -10px 0 #6a1b9a; }   
+.organization { display: inline; box-shadow: inset 0 -10px 0 #ff82a1;}
+.location { display: inline; box-shadow: inset 0 -10px 0 #ea4664; }    
+.civilization { display: inline; box-shadow: inset 0 -10px 0 #3bff3b9a; }
+.date { display: inline; box-shadow: inset 0 -10px 0 #9899e9;}        
+.time { display: inline; box-shadow: inset 0 -10px 0 #abccb6; }        
+.quantity { display: inline; box-shadow: inset 0 -10px 0 #fff27c; }    
+.event { display: inline; box-shadow: inset 0 -10px 0 #ff5e66; }       
+.animal { display: inline; box-shadow: inset 0 -10px 0 #b4bed2; }      
+.plant { display: inline; box-shadow: inset 0 -10px 0 #4a148c; }        
+.material { display: inline; box-shadow: inset 0 -10px 0 #01579b; }    
+.term { display: inline; box-shadow: inset 0 -10px 0 #a1e1ff; }

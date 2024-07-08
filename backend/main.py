@@ -2,7 +2,7 @@ from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from dto import *
 import database
-# from predict import startPredict
+from predict import predict as pre
 
 # uvicorn main:app --reload
 app = FastAPI()
@@ -47,3 +47,9 @@ async def join(item:JoinRequest):
         return {
             "status" : False
         }
+    
+@app.get("/predict")
+async def predict(text:str = Query(...)):
+    ner = pre(text)
+    print(ner)
+    return {"ner" : ner}
