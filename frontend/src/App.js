@@ -7,8 +7,9 @@ import Mypage from "./page/mypage"
 
 function App() {
   return (
+    
     <Routes>
-
+      
       <Route path="/" element={<Login />}></Route>
       <Route path="/join" element={<Join />}></Route>
       <Route path="/home" element={<Home />}></Route>
