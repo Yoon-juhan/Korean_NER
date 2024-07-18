@@ -9,6 +9,8 @@ import logo from '../logo.png'
 
 function Home() {
 
+    const id = sessionStorage.getItem("id");
+
     const [text, setText] = useState("")
     const [htmlContent, setHtmlContent] = useState("");
     const [allEntities, setAllEntities] = useState([]);
@@ -18,43 +20,25 @@ function Home() {
         artifacts: ["인공물, 상품명", []],
         date: ["날짜", []],
         time: ["시간", []],
+        location: ["지역, 자연물, 랜드마크", []],
         animal: ["동물, 신체부위", []],
         plant: ["식물 관련", []],
+        event: ["행사/축제, 사건/사고", []],
         study_field: ["학문 분야", []],
         theory: ["이론, 법칙, 기법", []],
-        location: ["지역, 자연물, 랜드마크", []],
         civilization: ["의식주, 문화", []],
         quantity: ["숫자 관련 개체명", []],
-        event: ["행사/축제, 사건/사고", []],
         material: ["원소, 화학물, 금속/암석", []],
         term: ["기타", []]
     }
     
-    const [tableData, setTableData] = useState({
-        person: ["이름", []],
-        organization: ["기관, 기업, 단체", []],
-        artifacts: ["인공물, 상품명", []],
-        date: ["날짜", []],
-        time: ["시간", []],
-        animal: ["동물, 신체부위", []],
-        plant: ["식물 관련", []],
-        study_field: ["학문 분야", []],
-        theory: ["이론, 법칙, 기법", []],
-        location: ["지역, 자연물, 랜드마크", []],
-        civilization: ["의식주, 문화", []],
-        quantity: ["숫자 관련 개체명", []],
-        event: ["행사/축제, 사건/사고", []],
-        material: ["원소, 화학물, 금속/암석", []],
-        term: ["기타", []]
-    });
+    const [tableData, setTableData] = useState({});
 
-    const tableName = ['person', 'study_field', 'theory', 'artifacts', 'organization', 'location', 'civilization', 'date', 'time', 'quantity', 'event', 'animal', 'plant', 'material', 'term']
+    const tableName = ['person', 'organization', 'artifacts', 'date', 'time', 'location', 'animal', 'plant', 'event', 'study_field', 'theory', 'civilization', 'quantity', 'material', 'term']
 
-    console.log("tableData", tableData)
     const handleInput = (e) => {
         setText(e.target.innerText);
     };
-
 
     const handleButtonClick = async () => {
         try {
@@ -102,11 +86,14 @@ function Home() {
         setTableData(table_data);
         console.log("allEntities", allEntities);
         console.log("tableData", tableData);
+        console.log("tableDataSSSSSS", JSON.stringify(tableData));
 
         allEntities.forEach(entity => {
             const regex = new RegExp(`(${entity.value})`, 'g');
             highlightedText = highlightedText.replace(regex, `<span class="${entity.type}">$1</span>`);
         });
+
+        savePredict(id, text, JSON.stringify(tableData));   // 예측 기록 저장
 
         return highlightedText;
     };
@@ -140,6 +127,18 @@ function Home() {
         term: '#a1e1ff'
     };
 
+    // 예측 기록 저장
+    async function savePredict(user_id, text, predict_json) {
+        console.log("#############", predict_json)
+        let url = `${process.env.REACT_APP_SERVER_URL}/savePredict`
+        await axios.get(url, {
+            params : {user_id, text, predict_json}
+        })
+            .then((res) => {
+                console.log(res.data);
+            })
+    }
+
     return (
 
         <div className="Home">
@@ -172,9 +171,9 @@ function Home() {
 
                 </div>
 
-                <button onClick={handleButtonClick}>개체명 인식</button>
+                <button className='predict_btn' onClick={handleButtonClick}>개체명 인식</button>
 
-                <table>
+                <table className='result_table'>
                     <tr>
                         <th>색</th>
                         <th>개체명</th>
@@ -186,7 +185,7 @@ function Home() {
                             <tr key={index}>
                                 <td align='center'><div className='color' style={{backgroundColor : colorMap[item]}}></div></td>
                                 <td>{item}</td>
-                                <td>{tableData[item] ? tableData[item][0] : ""}</td>
+                                <td>{table_data[item][0]}</td>
                                 <td>{tableData[item] ? tableData[item][1].toString().replaceAll(",", ", ") : ""}</td>
                             </tr>
                         ))}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from 'sweetalert2'
+import logo from '../logo.png'
 
 function Login() {
     let navi = useNavigate()
@@ -31,7 +32,7 @@ function Login() {
         <div className="Login">
 
             <header className="Login-header">
-                <h1 align="center" className="logo">한국어 개체명 인식</h1>
+                <h1 align="center" className="logo"><span><img src={logo} className='logo_img'/> 한국어 개체명 인식</span></h1>
 
                 <div className="login_box">
                     <p><input className='input' type="text" onChange={e => setId(e.target.value)} placeholder='아이디'/></p>

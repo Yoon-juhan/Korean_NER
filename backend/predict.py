@@ -48,6 +48,7 @@ def predict(text):
         tag_tokenizer = tokenizer_from_json(tag_tokenizer_json)
 
     text = re.sub('[^ㄱ-ㅣ가-힣0-9a-zA-Z.]+', " ", text)
+    text = re.sub('\n', " ", text)
     text = text.split(" ")
 
     index_to_tag = tag_tokenizer.index_word
