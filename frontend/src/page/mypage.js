@@ -25,9 +25,10 @@ function MyPage() {
     const handleClose2 = () => setShow2(false);
     const handleShow2 = () => setShow2(true);
     const [history, setHistory] = useState([]);
+    const [tableData, setTableData] = useState({});
 
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 10;
+    const itemsPerPage = 8;
 
     useEffect(() => {
         getHistory();
@@ -39,8 +40,11 @@ function MyPage() {
             params: { user_id: id }
         })
             .then((res) => {
-                console.log(res.data);
-                setHistory(res.data);
+                if (res.data[0]) {
+                    console.log(res.data);
+                    setHistory(res.data);
+                }
+
             })
     }
 
@@ -101,6 +105,22 @@ function MyPage() {
                 navi("/")
             })
     }
+
+    async function getHistory_one(history_id) {
+        let url = `${process.env.REACT_APP_SERVER_URL}/getHistory_one`
+        await axios.get(url, {
+            params: { history_id }
+        })
+            .then((res) => {
+                navi("/history")
+                sessionStorage.setItem("history", res.data[0].PREDICT_JSON);
+                console.log(res.data[0].PREDICT_JSON);
+            })
+    }
+
+
+
+
     return (
 
         <div className="mypage">
@@ -184,35 +204,35 @@ function MyPage() {
 
             </div>
             <hr />
-
-            <table className='history_table'>
-                <thead align='center'>
-                    <tr>
-                        <th>텍스트</th>
-                        <th>버튼</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        currentItems.map((item, index) => (
+            {history.length > 0 ? (
+                <><table className='history_table'>
+                    <thead align='center'>
+                        <tr>
+                            <th>텍스트</th>
+                            <th>예측 기록</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {currentItems.map((item, index) => (
                             <tr key={index}>
-                                <td>{item.TEXT}</td>
-                                <td><button>버튼</button></td>
+                                <td>{item.TEXT.slice(0, 50)} ... &nbsp;</td>
+                                <td><button className='histoty_btn' key={item.HISTORY_ID} onClick={() => getHistory_one(item.HISTORY_ID)}>예측 기록</button></td>
                             </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
-            <br />
-            <div className="d-flex justify-content-center">
-                <Pagination>
-                    {pageNumbers.map(number => (
-                        <Pagination.Item className='pagination' key={number} active={number === currentPage} onClick={() => paginate(number)}>
-                            {number}
-                        </Pagination.Item>
-                    ))}
-                </Pagination>
-            </div>
+                        ))}
+                    </tbody>
+                </table><br /><div className="d-flex justify-content-center">
+                        <Pagination>
+                            {pageNumbers.map(number => (
+                                <Pagination.Item className='pagination' key={number} active={number === currentPage} onClick={() => paginate(number)}>
+                                    {number}
+                                </Pagination.Item>
+                            ))}
+                        </Pagination>
+                    </div></>
+            ) : (
+                <h1 align="center">예측 기록이 없습니다.</h1>
+            )}
+
 
         </div>
     );

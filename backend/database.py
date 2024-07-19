@@ -135,3 +135,20 @@ def selectHistory(user_id):
     conn.close()
 
     return df
+
+# 예측 기록 조회
+def getHistory_one(history_id):
+    conn = cx.connect(db_id, db_pw, db_url)
+
+    sql = f"""select * from user_history
+                where history_id = '{history_id}'"""
+    
+    cur = conn.cursor()
+    cur.execute(sql)
+    
+    df = pd.read_sql(sql, con = conn)
+
+    cur.close()
+    conn.close()
+
+    return df

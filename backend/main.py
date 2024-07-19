@@ -91,9 +91,16 @@ async def deleteUser (id: str = Query(...)):
 
     return {"sttus" : True}
 
-# 예측 기록 조회
+# 예측 기록 리스트 조회
 @app.get("/getHistory")
 async def getHistory (user_id: str = Query(...)):
     df = database.selectHistory(user_id)
+
+    return df.to_dict(orient="records")
+
+# 예측 기록 조회
+@app.get("/getHistory_one")
+async def getHistory_one (history_id: str = Query(...)):
+    df = database.getHistory_one(history_id)
 
     return df.to_dict(orient="records")

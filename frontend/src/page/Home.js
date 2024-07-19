@@ -93,7 +93,7 @@ function Home() {
             highlightedText = highlightedText.replace(regex, `<span class="${entity.type}">$1</span>`);
         });
 
-        savePredict(id, text, JSON.stringify(tableData));   // 예측 기록 저장
+        savePredict(id, text, JSON.stringify(table_data));   // 예측 기록 저장
 
         return highlightedText;
     };
