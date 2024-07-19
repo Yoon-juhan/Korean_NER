@@ -8,7 +8,7 @@ import Pagination from 'react-bootstrap/Pagination'
 import logo from '../logo.png'
 
 function MyPage() {
-    let navi = useNavigate()
+    let navi = useNavigate();
     const tableName = ['person', 'organization', 'artifacts', 'date', 'time', 'location', 'animal', 'plant', 'event', 'study_field', 'theory', 'civilization', 'quantity', 'material', 'term']
     const history =  JSON.parse(sessionStorage.getItem("history"));
     console.log(history);
