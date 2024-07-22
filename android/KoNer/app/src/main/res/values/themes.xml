@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.KoNer" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.KoNer" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/background</item>
         <item name="android:fontFamily">@font/east_sea_dokdo_regular</item>
+        <item name="android:statusBarColor">#000000</item>
     </style>
 </resources>
