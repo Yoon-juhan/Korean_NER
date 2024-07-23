@@ -14,7 +14,7 @@
         android:layout_marginTop="100dp"
         android:text="한국어 개체명 인식"
         android:textColor="#000000"
-        android:textSize="50sp"
+        android:textSize="55sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,11 +48,11 @@
             <EditText
                 android:id="@+id/loginId"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/outline"
                 android:ems="10"
                 android:hint="아이디"
                 android:inputType="text"
@@ -66,11 +66,11 @@
             <EditText
                 android:id="@+id/loginPw"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/outline"
                 android:ems="10"
                 android:hint="비밀번호"
                 android:inputType="textPassword"
@@ -79,6 +79,47 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginId"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:background="#767676"
+                app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+                app:layout_constraintEnd_toEndOf="@+id/loginPw"
+                app:layout_constraintStart_toStartOf="@+id/loginPw"
+                app:layout_constraintTop_toBottomOf="@+id/loginPw"
+                tools:ignore="MissingConstraints" />
+
+            <android.widget.Button
+                android:id="@+id/loginBtn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_style"
+                android:text="로그인"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/loginPw"
+                app:layout_constraintStart_toStartOf="@+id/loginPw"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <android.widget.Button
+                android:id="@+id/joinBtn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_style"
+                android:text="회원가입"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+                app:layout_constraintStart_toStartOf="@+id/loginBtn"
+                app:layout_constraintTop_toBottomOf="@+id/loginBtn"
                 tools:ignore="TouchTargetSizeCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
