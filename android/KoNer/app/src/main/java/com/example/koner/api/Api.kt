@@ -4,11 +4,13 @@ import com.example.koner.model.JoinRequest
 import com.example.koner.model.JoinResponse
 import com.example.koner.model.LoginRequest
 import com.example.koner.model.LoginResponse
+import com.example.koner.model.PredictResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface Api {
     @POST("login")
@@ -16,4 +18,9 @@ interface Api {
 
     @POST("join")
     fun join(@Body body: JoinRequest) : Call<JoinResponse>
+
+    @GET("predict")
+    fun predict(
+        @Query("text") text:String,
+    ) : Call<PredictResponse>
 }

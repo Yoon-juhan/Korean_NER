@@ -21,3 +21,7 @@ data class JoinRequest (
 data class JoinResponse (
     val status:Boolean
 )
+
+data class PredictResponse (
+    val ner: Map<String, List<String>>
+)
