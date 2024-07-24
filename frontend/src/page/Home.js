@@ -106,6 +106,7 @@ function Home() {
         });
 
         const data = response.data.ner;
+        console.log("data", data)
         return highlightEntities(text, data);
     }
 
