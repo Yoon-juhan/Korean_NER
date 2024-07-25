@@ -1,5 +1,6 @@
 package com.example.koner.api
 
+import com.example.koner.model.HistoryRecord
 import com.example.koner.model.JoinRequest
 import com.example.koner.model.JoinResponse
 import com.example.koner.model.LoginRequest
@@ -23,4 +24,7 @@ interface Api {
     fun predict(
         @Query("text") text:String,
     ) : Call<PredictResponse>
+
+    @GET("/getHistory")
+    fun getHistory(@Query("user_id") userId: String): Call<List<HistoryRecord>>
 }

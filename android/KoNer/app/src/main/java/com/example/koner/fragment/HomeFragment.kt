@@ -37,6 +37,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.navBar.myPageBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_mypageFragment)
+        }
+
         binding.predictBtn.setOnClickListener {
             text = binding.inputText.text.toString()
 
@@ -79,6 +83,8 @@ class HomeFragment : Fragment() {
             binding.event.text = ""
             binding.animal.text = ""
             binding.plant.text = ""
+            binding.material.text = ""
+            binding.term.text = ""
 
             val spannable = SpannableString(text)
 

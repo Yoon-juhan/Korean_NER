@@ -43,7 +43,7 @@ class LoginFragment : Fragment() {
 
                 if (response.status == true) {
                     viewModel.loginResponse.removeObservers(viewLifecycleOwner)
-                    viewModel.resetLoginResponse()
+//                    viewModel.resetLoginResponse()
                     findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                 } else if (response.id != " " && response.status == false) {
                     Toast.makeText(requireContext(), "없는 회원입니다.", Toast.LENGTH_SHORT).show()

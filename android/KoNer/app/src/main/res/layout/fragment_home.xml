@@ -2,11 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     tools:context=".fragment.HomeFragment">
 
     <include
+        android:id="@+id/navBar"
         layout="@layout/fragment_nav_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -24,7 +25,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/inputText"
@@ -53,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                app:cardCornerRadius="8dp" >
+                app:cardCornerRadius="8dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -73,24 +74,26 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
                                 android:padding="8dp"
                                 android:text="색"
                                 android:textAlignment="center"
                                 android:textColor="#000000"
                                 android:textSize="25sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="개체명"
-                                android:textAlignment="center"
-                                android:textColor="#000000"
-                                android:textSize="25sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="개체명"-->
+                            <!--                                android:textAlignment="center"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="25sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
                                 android:padding="8dp"
                                 android:text="설명"
                                 android:textAlignment="center"
@@ -100,6 +103,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
                                 android:padding="8dp"
                                 android:text="결과"
                                 android:textAlignment="center"
@@ -115,13 +119,13 @@
                                 android:background="#eeff00"
                                 android:padding="8dp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="person"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="person"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -138,7 +142,7 @@
                                 android:breakStrategy="simple"
                                 android:padding="8dp"
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -150,13 +154,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="organization"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="organization"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -173,7 +177,7 @@
                                 android:padding="8dp"
                                 android:text=""
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -185,13 +189,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="artifacts"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="artifacts"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -208,7 +212,7 @@
                                 android:padding="8dp"
                                 android:text=""
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -220,13 +224,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="date"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="date"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -242,7 +246,7 @@
                                 android:layout_height="wrap_content"
                                 android:padding="8dp"
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -254,13 +258,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="time"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="time"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -277,7 +281,7 @@
                                 android:padding="8dp"
                                 android:text=""
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -289,13 +293,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="location"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="location"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -312,7 +316,7 @@
                                 android:padding="8dp"
                                 android:text=""
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -324,13 +328,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="animal"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="animal"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -347,7 +351,7 @@
                                 android:padding="8dp"
                                 android:text=""
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -359,13 +363,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="plant"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="plant"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -382,7 +386,7 @@
                                 android:padding="8dp"
                                 android:text=""
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -394,13 +398,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="event"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="event"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -417,7 +421,7 @@
                                 android:padding="8dp"
                                 android:text=""
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -429,13 +433,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="study_field"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="study_field"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -452,7 +456,7 @@
                                 android:padding="8dp"
                                 android:text=""
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -464,13 +468,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="theory"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="theory"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -487,7 +491,7 @@
                                 android:padding="8dp"
                                 android:text=""
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="22sp" />
                         </TableRow>
 
                         <TableRow>
@@ -499,13 +503,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="civilization"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="civilization"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -534,13 +538,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="quantity"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="quantity"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -569,13 +573,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="material"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="material"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -604,13 +608,13 @@
                                 android:padding="8dp"
                                 android:text="" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:text="term"
-                                android:textColor="#000000"
-                                android:textSize="22sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:text="term"-->
+                            <!--                                android:textColor="#000000"-->
+                            <!--                                android:textSize="22sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"

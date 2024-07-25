@@ -1,13 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.MypageFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <include
+        android:id="@+id/navBar"
+        layout="@layout/fragment_nav_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        app:cardBackgroundColor="#4DFFFFFF"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/myPageId"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/outline"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="아이디"
+                android:inputType="text"
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/myPagePw"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="70dp"
+                android:background="@drawable/outline"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="비밀번호"
+                android:inputType="textPassword"
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/myPageId"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/myPageNickname"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/outline"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="닉네임"
+                android:inputType="text"
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/myPagePw"
+                app:layout_constraintStart_toStartOf="@+id/myPagePw"
+                app:layout_constraintTop_toBottomOf="@+id/myPagePw"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:background="#767676"
+                app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+                app:layout_constraintEnd_toEndOf="@+id/myPagePw"
+                app:layout_constraintStart_toStartOf="@+id/myPagePw"
+                app:layout_constraintTop_toBottomOf="@+id/myPageNickname"
+                tools:ignore="MissingConstraints" />
+
+            <android.widget.Button
+                android:id="@+id/changePwBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/button_style2"
+                android:text="변경"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/myPagePw"
+                app:layout_constraintTop_toTopOf="@+id/myPagePw"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <android.widget.Button
+                android:id="@+id/changeNicknameBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/button_style2"
+                android:text="변경"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/myPageNickname"
+                app:layout_constraintTop_toTopOf="@+id/myPageNickname"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <android.widget.Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_style2"
+                android:text="로그아웃"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/myPageId"
+                app:layout_constraintStart_toStartOf="@+id/myPageId"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <android.widget.Button
+                android:id="@+id/deleteBtn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_style2"
+                android:text="회원탈퇴"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/logoutBtn"
+                app:layout_constraintStart_toStartOf="@+id/logoutBtn"
+                app:layout_constraintTop_toBottomOf="@+id/logoutBtn"
+                tools:ignore="TouchTargetSizeCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
